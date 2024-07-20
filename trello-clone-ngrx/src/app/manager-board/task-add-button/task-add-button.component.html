@@ -1,0 +1,24 @@
+<!-- Task 6: Add template here --><div *ngIf="showAddNewTaskInput">
+  <mat-card>
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+
+      <input type="text" matInput placeholder="Enter a card title" [formControl]="taskTitleFormControl">
+      <mat-error *ngIf="taskTitleFormControl.errors?.['required']">
+        *Enter a card title!
+      </mat-error>
+    </mat-form-field>
+    <div class="add-btns">
+      <button mat-button mat-raised-button class="btn-save" color="primary" (click)="addTask()"
+        [disabled]="taskTitleFormControl.errors?.['required']">submit</button>
+      <button mat-button mat-raised-button color="danger" (click)="cancelAddition()">Cancel</button>
+    </div>
+
+  </mat-card>
+
+</div>
+
+<button mat-button class="btn" color="primary" (click)="showAddTask()">
+  <mat-icon>add</mat-icon>
+  Add a card
+</button>   

@@ -1,0 +1,29 @@
+.dialog-container {
+  position: relative;
+}
+.mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-close {
+  left: 90%;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.modal-action-buttons {
+  justify-content: end;
+}
+.mat-button-base {
+  margin-left: 2px !important;
+}
+
+.btn-normal {
+  background-color: #2e6092 !important;
+  color: white;
+}

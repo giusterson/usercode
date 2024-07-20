@@ -1,0 +1,33 @@
+<div class="dialog-container">
+    <button mat-button class="btn-close" (click)="dialogRef.close()">
+        <mat-icon>close</mat-icon>
+    </button>
+
+    <div mat-dialog-content>
+        <mat-form-field>
+            <mat-label>Task Title</mat-label>
+            <input type="text" matInput placeholder="Enter a card title" [formControl]="taskTitleFormControl">
+            <mat-error *ngIf="taskTitleFormControl.errors?.['required']">
+                *Card title is Required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Task Description</mat-label>
+            <textarea matInput placeholder="Enter task description" [formControl]="taskDescriptionFormControl"
+                cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="12"></textarea>
+        </mat-form-field>
+
+    </div>
+
+    <div mat-dialog-actions class="modal-action-buttons">
+        <button mat-button mat-raised-button color="warn" (click)="deleteTask()">
+            Delete
+        </button>
+
+        <button mat-button mat-raised-button class="btn-normal" [disabled]="taskTitleFormControl.errors?.['required']"
+            (click)="updateTask()">
+            Update
+        </button>
+    </div>
+</div>

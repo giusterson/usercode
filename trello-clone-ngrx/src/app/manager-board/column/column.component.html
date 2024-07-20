@@ -1,0 +1,11 @@
+<!-- Task 3+6+11: Add template here --><h2 class="title">{{ column.colTitle }}</h2>
+<h2 class="title">{{ column.colTitle }}</h2>
+
+<div>
+  <app-task-card cdkDrag class="task" *ngFor="let task of column.colTasks let index = index" [colId]="column.id"
+    [task]="task" [tasks]="column.colTasks">
+  </app-task-card>
+</div>
+
+<app-task-add-button [colId]="column.id" [tasks]="column.colTasks">
+</app-task-add-button>
